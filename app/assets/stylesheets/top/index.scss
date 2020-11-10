@@ -1,0 +1,31 @@
+.top {
+  width: 100vw;
+  height: 100vh;
+  background-image: image-url("love-4712145_1280.jpg");
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  background-size: cover;
+}
+
+.message {
+  margin-top: 100px;
+  color: white;
+  font-size: 70px;
+}
+
+.apple-btn {
+  display: block;
+  background-color: rgb(19, 228, 71);
+  margin-top: 50px;
+  border: 1px black solid;
+  color: white;
+  font-size: 20px;
+  border-style: none;
+  box-shadow: 2px 2px 3px 1px #666;
+  border-radius: 10px;
+  width: 20%;
+  height: 6%;
+  text-align-last: center;
+  padding-top: 5px;
+  }
