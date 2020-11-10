@@ -1,0 +1,71 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  height: 60px;
+  padding: 5px 140px;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  width: 60vw;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin-top: 30px;
+  
+}
+
+.item-message {
+  margin-top: 20px;
+  background-color: rgb(248, 244, 244);
+  height: 100vh;
+  padding-top: 20px;
+}
+
+.message-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.messages {
+  width: 60vw;
+  text-align: left;
+  color: rgb(236, 199, 205);
+}
+
+.woman-image {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.woman {
+  width: 60vw;
+  height: 15vh;
+  text-align: left;
+  margin-top: 10px;
+  
+}
+
+ .name {
+   
+   position: absolute;
+   left: 370px;
+   top: 16px;
+ }
+
+ .message-top {
+   position: absolute;
+   left: 390px;
+   top: 50px;
+ }
+
+ 
+
