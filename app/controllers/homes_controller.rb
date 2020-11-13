@@ -1,5 +1,8 @@
 class HomesController < ApplicationController
   def index
-    
-  end
+    @user = User.new
+    @others = User.where.not(id: current_user.id)
+   
+end
+
 end

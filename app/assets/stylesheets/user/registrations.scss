@@ -49,10 +49,11 @@
   height:  150px;
 }
 
-.form-button {
+.submit-button {
   margin-top: 30px;
   display: inline-block;
-  padding: 10px 60px;
+  padding: 10px;
+  width: 200px;
   text-decoration: none;
   color: red;
   border: solid 2px red;
@@ -61,7 +62,7 @@
   font-size: 15px;
 }
 
-.form-button:hover {
+.submit-button:hover {
   background: red;
   color: white;
 }

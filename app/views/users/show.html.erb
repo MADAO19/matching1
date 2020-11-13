@@ -1,12 +1,16 @@
 <div class="item">
       <div class="header">
-      <%= link_to homes_path do %><i class="fas fa-globe fa-3x"></i> <% end %> <!-- マイページに遷移 -->
-      <%= link_to user_talks_path(current_user.id) do %><i class="fas fa-comment fa-3x"></i><% end %> <!-- トーク画面に遷移 -->
-      <%= link_to  user_path(current_user.id) do %><i class="fas fa-user-md fa-3x"></i><% end %> <!-- マイページに遷移 -->
+      <%= link_to homes_path do %><i class="fas fa-globe fa-3x" ></i> <% end %> <!-- マイページに遷移 -->
+      <%= link_to user_talks_path(current_user.id) do %><i class="fas fa-comment fa-3x" ></i><% end %> <!-- トーク画面に遷移 -->
+      <%= link_to  user_path(current_user.id) do %><i class="fas fa-user-md fa-3x current-icon" ></i><% end %> <!-- マイページに遷移 -->
   </div>
+  
   <div class="main">
-    <a href="#"><img src="images/ldmwZAWwTzuuMUm1604628340_1604628549.png" width="200" class="main-image"></a>
-    <p class="name-age">あさこ . 60</p>
+    <img src=<%= current_user.image %> class="main-image">
+    <p class="name-age"><%= current_user.nickname %> .
+    <%= (Date.today.strftime('%Y%m%d').to_i - current_user.birthday.strftime('%Y%m%d').to_i) / 10000 %>
+    </p>
+   
   </div>
   <div class="footer">
     <a href="#" class="btn-real-dent"><i class="fas fa-cog"></i>設定</a> <!-- 各種設定 -->

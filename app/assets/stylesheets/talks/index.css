@@ -5,6 +5,18 @@
   padding: 5px 140px;
 }
 
+.talk-main-wrap {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(248, 244, 244);
+  margin-top: 30px;
+  border-top: solid 1px rgb(202, 199, 199);
+}
+
+.talk-main {
+  width: 80vw;
+}
+
 .search {
   display: flex;
   justify-content: center;
@@ -19,53 +31,42 @@ input {
   -webkit-appearance: none;
   -moz-appearance: none;
   margin-top: 30px;
-  
 }
 
 .item-message {
-  margin-top: 20px;
-  background-color: rgb(248, 244, 244);
   height: 100vh;
   padding-top: 20px;
 }
 
 .message-wrap {
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  margin: 5px 0 0 120px;
 }
 
 .messages {
-  width: 60vw;
   text-align: left;
   color: rgb(236, 199, 205);
 }
 
 .woman-image {
   display: flex;
-  justify-content: center;
-  position: relative;
+  justify-content: left;
+  margin: 5px 0 0 120px;
 }
 
 .woman {
-  width: 60vw;
-  height: 15vh;
   text-align: left;
-  margin-top: 10px;
-  
+  margin-top: 15px;
+  display: block;
 }
 
- .name {
-   
-   position: absolute;
-   left: 370px;
-   top: 16px;
- }
 
  .message-top {
-   position: absolute;
-   left: 390px;
-   top: 50px;
+  margin: 10px;
  }
 
- 
+ .woman-message-wrap {
+  margin: 20px 0 0 30px;
+ }
 

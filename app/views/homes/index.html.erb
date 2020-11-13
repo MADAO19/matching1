@@ -1,15 +1,14 @@
 <div class="item-color">
       <div class="header">
-       <%= link_to homes_path do %><i class="fas fa-globe fa-3x"></i> <% end %> <!-- マイページに遷移 -->
-      <%= link_to user_talks_path(current_user.id) do %><i class="fas fa-comment fa-3x"></i><% end %> <!-- トーク画面に遷移 -->
-      <%= link_to  user_path(current_user.id) do %><i class="fas fa-user-md fa-3x"></i><% end %> <!-- マイページに遷移 -->
+       <%= link_to homes_path do %><i class="fas fa-globe fa-3x current-icon" ></i> <% end %> <!-- マイページに遷移 -->
+      <%= link_to user_talks_path(current_user.id) do %><i class="fas fa-comment fa-3x" ></i><% end %> <!-- トーク画面に遷移 -->
+      <%= link_to  user_path(current_user.id) do %><i class="fas fa-user-md fa-3x" ></i><% end %> <!-- マイページに遷移 -->
   </div>
   <div class="sub">
-    <a href="#"><img src="/assets/2f16139eaa87a54b96f04fa7bdc39b79_w.jpg" class="sub-image"></a>  <!-- 相手ページに遷移？ -->
+  <%  @others.each do |other|%>
+  <%= link_to "#", class: "sub-main" do %>
+  <img src=<%= other.image %> class="sub-image">  <% end %>
+  <%end%>
   </div>
-  <div class="footer">
-    <a href="#" class="button-real-dent"><i class="fas fa-heart"></i></a> <!-- like -->
-      <a href="#" class="button-real-dent"><i class="fas fa-heart-broken"></i> <!-- dislike -->
-    </a>
-  </div>
+    <%= render "relationships/follow_button", { user: @user } %> 
   </div>

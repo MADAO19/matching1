@@ -1,13 +1,16 @@
 <div class="talk-home">
       <div class="header">
-      <%= link_to homes_path do %><i class="fas fa-globe fa-3x"></i> <% end %> <!-- マイページに遷移 -->
-      <%= link_to user_talks_path(current_user.id) do %><i class="fas fa-comment fa-3x"></i><% end %> <!-- トーク画面に遷移 -->
-      <%= link_to  user_path(current_user.id) do %><i class="fas fa-user-md fa-3x"></i><% end %> <!-- マイページに遷移 -->
+      <%= link_to homes_path do %><i class="fas fa-globe fa-3x" ></i> <% end %> <!-- マイページに遷移 -->
+      <%= link_to user_talks_path(current_user.id) do %><i class="fas fa-comment fa-3x current-icon" ></i><% end %> <!-- トーク画面に遷移 -->
+      <%= link_to  user_path(current_user.id) do %><i class="fas fa-user-md fa-3x" ></i><% end %> <!-- マイページに遷移 -->
   </div>
   </div>
+  
   <div class="search">
   <input type="text" class="fas fa-search" placeholder="&#xf002; マッチの検索" style="font-family: Font Awesome 5 Free;">
 </div>
+<div class="talk-main-wrap">
+  <div class="talk-main">
   <div class="item-message">
   <div class="message-wrap">
   <p class="messages">新しいマッチ</p>
@@ -20,8 +23,10 @@
 </div>
 <div class="woman-image">
   <a href="#" class="woman"><img src="/assets/ldmwZAWwTzuuMUm1604628340_1604628549.png" width="70px"></a>
+  <div class="woman-message-wrap">
   <p class="name">よしこ</p>
   <p class="message-top">こんにちわ！！</p>
+  </div>
 </div>
-
+</div>
   </div>
