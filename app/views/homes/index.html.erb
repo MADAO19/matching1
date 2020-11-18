@@ -4,11 +4,77 @@
       <%= link_to user_talks_path(current_user.id) do %><i class="fas fa-comment fa-3x" ></i><% end %> <!-- トーク画面に遷移 -->
       <%= link_to  user_path(current_user.id) do %><i class="fas fa-user-md fa-3x" ></i><% end %> <!-- マイページに遷移 -->
   </div>
-  <div class="sub">
+ 
+
+  <div id="tinderslide">
+  <ul>
   <%  @others.each do |other|%>
+  <li>
   <%= link_to "#", class: "sub-main" do %>
   <img src=<%= other.image %> class="sub-image">  <% end %>
-  <%end%>
+  <div class="like"></div>
+  <div class="dislike"></div>
+  </li>
+  <% end %>
+  </ul>
+  <div class="noUser">近くにお相手がいません。</div>
   </div>
-    <%= render "relationships/follow_button", { user: @user } %> 
+    <div class="actions" id="actionBtnArea">
+    <a href="#" class="button-real-dent like"><i class="fas fa-heart"></i></a> <!-- like -->
+      <a href="#" class="button-real-dent dislike"><i class="fas fa-heart-broken"></i></a> <!-- dislike -->
+      </div>
   </div>
+  <script>
+  const usersNum = "<%= @others.length %>"
+  const convertUserNum = Number(usersNum)
+  let currentUserIndex = 0;
+  var postReaction = function (user_id, reaction) {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+        }
+    });
+    $.ajax({
+      type: "POST",
+      url: "<%= reactions_path %>",
+      data: {
+        user_id: user_id,
+        reaction: reaction,
+      },
+      success: function(j_data){
+        console.log("success")
+      }
+    });
+  }
+  $("#tinderslide").jTinder({
+    onDislike: function (item) {
+      currentUserIndex++;
+      checkUserNum();
+      var user_id = item[0].dataset.user_id
+      postReaction(user_id, 'dislike')
+    },
+    onLike: function (item) {
+      currentUserIndex++;
+      checkUserNum();
+      var user_id = item[0].dataset.user_id
+      postReaction(user_id, 'like')
+    },
+    animationRevertSpeed: 200,
+    animationSpeed: 400,
+    threshold: 1,
+    likeSelector: '.like',
+    dislikeSelector: '.dislike'
+  });
+  $('.actions .like, .actions .dislike').click(function(e){
+    e.preventDefault();
+    $("#tinderslide").jTinder($(this).attr('class'));
+  });
+
+  function checkUserNum() {
+    if (currentUserIndex === convertUserNum){
+      $(".noUser").addClass("is-active");
+      $("#actionBtnArea").addClass("is-none")
+      return;
+    }
+  }
+</script>
