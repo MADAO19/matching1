@@ -7,26 +7,32 @@
   </div>
   
   <div class="search">
-  <input type="text" class="fas fa-search" placeholder="&#xf002; マッチの検索" style="font-family: Font Awesome 5 Free;">
+  <input type="text" class="fas fa-search" placeholder="&#xf002; <%= @talk_users.size %>人のマッチ" style="font-family: Font Awesome 5 Free;">
 </div>
 <div class="talk-main-wrap">
   <div class="talk-main">
   <div class="item-message">
-  <div class="message-wrap">
-  <p class="messages">新しいマッチ</p>
+  <div class="messages-wrap">
+  <p class="Messages">新しいマッチ</p>
 </div>
+  
+  <% @talk_users.each do |talk| %>
   <div class="woman-image">
-  <a href="#" class="woman"><img src="/assets/ldmwZAWwTzuuMUm1604628340_1604628549.png" width="70px"></a>
+  <%= link_to image_tag("#{talk.image}"),'#', class:"man" %>
 </div>
-<div class="message-wrap">
+<% end %>
+<div class="messages-wrap">
   <p class="messages">メッセージ</p>
 </div>
+
+<% @talk_users.each do |talk| %>
 <div class="woman-image">
-  <a href="#" class="woman"><img src="/assets/ldmwZAWwTzuuMUm1604628340_1604628549.png" width="70px"></a>
-  <div class="woman-message-wrap">
-  <p class="name">よしこ</p>
-  <p class="message-top">こんにちわ！！</p>
+  <%= link_to image_tag("#{talk.image}"), user_talk_path(current_user.id, talk.id), class:"woman" %>
   </div>
+  <div class="messages-wrap">
+  <%= link_to ("#{talk.nickname}"),user_talk_path(current_user.id, talk.id), class:"name" %>
+  <p class="messages-talk">こんにちわ！！</p>
 </div>
+<% end %>
 </div>
   </div>

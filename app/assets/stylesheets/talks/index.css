@@ -38,35 +38,59 @@ input {
   padding-top: 20px;
 }
 
-.message-wrap {
-  display: flex;
-  justify-content: left;
-  margin: 5px 0 0 120px;
-}
 
-.messages {
-  text-align: left;
-  color: rgb(236, 199, 205);
-}
 
 .woman-image {
-  display: flex;
-  justify-content: left;
-  margin: 5px 0 0 120px;
+  margin: 5px 0 0 50px;
+  display: inline-block;
 }
 
-.woman {
-  text-align: left;
+.man img{
   margin-top: 15px;
   display: block;
+  border-radius: 60px;
+  width: 70px;
+  margin-bottom: 15px;
 }
 
 
  .message-top {
-  margin: 10px;
+  margin: 5px 50px 0 0;
  }
 
  .woman-message-wrap {
-  margin: 20px 0 0 30px;
+  margin: -60px 0 0 210px;
  }
 
+
+ .Messages {
+  text-align: left;
+  color: rgb(236, 199, 205);
+  margin: 0 20px 0 50px;
+ }
+
+ .name {
+   display: block;
+   margin-left: 150px;
+   margin-top: -75px;
+   margin-bottom: 70px;
+ }
+
+ .messages-talk {
+  margin-left: 155px;
+  margin-top: -65px;
+   margin-bottom: 60px;
+ }
+
+ .woman img {
+  margin-top: 15px;
+  display: block;
+  border-radius: 60px;
+  width: 70px;
+ }
+
+ .messages {
+  text-align: left;
+  color: rgb(236, 199, 205);
+  margin: 30px 20px 0 50px;
+ }

@@ -3,7 +3,7 @@
        <%= link_to homes_path do %><i class="fas fa-globe fa-3x current-icon" ></i> <% end %> <!-- マイページに遷移 -->
       <%= link_to user_talks_path(current_user.id) do %><i class="fas fa-comment fa-3x" ></i><% end %> <!-- トーク画面に遷移 -->
       <%= link_to  user_path(current_user.id) do %><i class="fas fa-user-md fa-3x" ></i><% end %> <!-- マイページに遷移 -->
-  </div>
+     </div>
  
 
   <div id="tinderslide">
@@ -11,19 +11,21 @@
   <%  @others.each do |other|%>
   <li>
   <%= link_to "#", class: "sub-main" do %>
+  <span><%= other.id %></span>
   <img src=<%= other.image %> class="sub-image">  <% end %>
-  <div class="like"></div>
+<%# <div class="userName"><%= other.nickname %>
   <div class="dislike"></div>
+  <div class="like"></div>
   </li>
   <% end %>
   </ul>
   <div class="noUser">近くにお相手がいません。</div>
   </div>
     <div class="actions" id="actionBtnArea">
+    <a href="#" class="button-real-dent dislike"><i class="fas fa-heart-broken"></i></a> <!-- dislike -->
     <a href="#" class="button-real-dent like"><i class="fas fa-heart"></i></a> <!-- like -->
-      <a href="#" class="button-real-dent dislike"><i class="fas fa-heart-broken"></i></a> <!-- dislike -->
-      </div>
   </div>
+</div>
   <script>
   const usersNum = "<%= @others.length %>"
   const convertUserNum = Number(usersNum)
@@ -50,13 +52,15 @@
     onDislike: function (item) {
       currentUserIndex++;
       checkUserNum();
-      var user_id = item[0].dataset.user_id
+      // var user_id = item[0].dataset.user_id
+      var user_id = parseInt(item[0].innerText)
       postReaction(user_id, 'dislike')
     },
     onLike: function (item) {
       currentUserIndex++;
       checkUserNum();
-      var user_id = item[0].dataset.user_id
+      // var user_id = item[0].dataset.user_id
+      var user_id = parseInt(item[0].innerText)
       postReaction(user_id, 'like')
     },
     animationRevertSpeed: 200,
