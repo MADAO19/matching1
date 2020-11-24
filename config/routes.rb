@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :homes, only: :index
   resources :reactions, only: :create
   resources :users, only: :show do
-    resources :talks, only: [:index, :show]
+    resources :talks, only: [:index, :show, :create]
     end
 end
