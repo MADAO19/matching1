@@ -4,22 +4,9 @@
       <div class="talkPartner_name"><%= @talk_room_user.nickname %></div>
     </div>
     <div class="talk">
-      <div class="talk_left">
-         <%= render @talk_messages %>
-      </div>
-
-      <div class="time-left">
-        <p>15:55</p>
-      </div>
-      <div class="talk_right">
-        <%= render @talk_messages %>
-      </div>
-
-      <div class="time-right">
-        <p>15:56</p>
-      </div>
+      <%= render @talk_messages %>
     </div>
       <div class="submit">
         <textarea class="submit-message" placeholder="メッセージを入力"></textarea>
-        <input type="submit" class="send" value="送信">
+        <input type="submit" class="send" value="送信" data-behavior="room_speaker">
       </div>
