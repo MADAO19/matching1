@@ -65,3 +65,6 @@ gem 'image_processing', '~> 1.2'
 
 gem 'carrierwave'
 
+gem 'unicorn', '5.4.1'
+
+gem "aws-sdk-s3", require: false

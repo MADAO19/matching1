@@ -7,13 +7,4 @@ class TalkChannel < ApplicationCable::Channel
     # Any cleanup needed when channel is unsubscribed
   end
 
-  def speak
-    message = TalkMessage.create(talk_room_id: data['talk_id'], user_id: data['user_id'], message: data['message'])
-    TalkRoomChannel.broadcast_to "talk_room_#{data['room_id']}", content: render_message(message)
-  end
-
-  private
-    def render_message(message)
-      ApplicationController.renderer.render(partial: 'talk_messages/talk_message', locals: { talk_message: message })
-    end
   end
