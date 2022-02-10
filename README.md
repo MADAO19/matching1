@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリケーション概要
 
-Things you may want to cover:
+マッチングアプリ。ユーザー登録をして気に入った人をライクしてトークをする簡易的なものです。
 
-* Ruby version
+# URL
 
-* System dependencies
+http://54.199.19.169:3000/
 
-* Configuration
+# 目指した課題解決
 
-* Database creation
+コロナ禍で街コンや合コンなど密で集ま流ことが難しい今の世の中、男女の出会いの場が減少していると思ったので、マッチングアプリなら男女の出会いを助けることができると思ったので作成しました。機能についてはこれから追加していこうと思っていますが、シンプルで操作が誰でもしやすいように心がけて作成しました。
 
-* Database initialization
+# 洗い出した用件
 
-* How to run the test suite
+|     機能    |        詳細                            |
+| ユーザー機能 | いいねする側、される側を管理                |
+| いいね機能   | 良いと思った人をいいね、逆をNOTいいねする機能 |
+| チャット機能 | いいねした人同士のみが個人チャットできる機能 |
+| ユーザー編集機能 | ユーザーの情報を編集する機能 |
 
-* Services (job queues, cache servers, search engines, etc.)
+# 実装した機能についてのGIFと説明
 
-* Deployment instructions
 
-* ...

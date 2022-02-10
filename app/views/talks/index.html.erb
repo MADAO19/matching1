@@ -27,10 +27,10 @@
 
 <% @talk_users.each do |talk| %>
 <div class="woman-image">
-  <%= link_to image_tag("#{talk.image}"), user_talks_path(talk.id), method: :post, class:"woman" %>
+  <%= link_to image_tag("#{talk.image}"), user_talks_path(talk.id, current_user.id), method: :post, class:"woman" %>
   </div>
   <div class="messages-wrap">
-  <%= link_to ("#{talk.nickname}"),user_talks_path(talk.id), method: :post, class:"name" %>
+  <%= link_to ("#{talk.nickname}"),user_talks_path(talk.id, current_user.id), method: :post, class:"name" %>
   <p class="messages-talk">こんにちわ！！</p>
 </div>
 <% end %>

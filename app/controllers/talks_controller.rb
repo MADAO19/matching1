@@ -17,8 +17,6 @@ class TalksController < ApplicationController
   end
   # チャットルームへ遷移させる
   redirect_to action: :show, id: talk_room.id
-
-  
 end
 
 
@@ -27,7 +25,8 @@ def show
   @talk_room = TalkRoom.find_by(id: params[:id])
   @talk_room_user = @talk_room.talk_room_users.where.not(user_id: current_user.id).first.user
   @talk_messages = TalkMessage.where(talk_room: TalkRoom.find_by(id: params[:id])).order(:created_at)
+  @messages = TalkMessage.all
 end
-  end
 
+ end
 

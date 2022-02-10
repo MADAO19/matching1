@@ -68,3 +68,5 @@ gem 'carrierwave'
 gem 'unicorn', '5.4.1'
 
 gem "aws-sdk-s3", require: false
+
+gem 'jquery-rails'

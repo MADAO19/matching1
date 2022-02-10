@@ -27,7 +27,7 @@
   height: 100px;
 }
 
-.btn-real-dent {
+.btn-real-dent{
   /*周りの凹み*/
   display: inline-block;
   position: relative;
@@ -35,7 +35,6 @@
   color: gray;
   width: 100px;
   height: 100px;
-  border-radius: 50%;
   text-align: center;
   margin: 0 100px;
 }
@@ -48,7 +47,6 @@
   line-height: 80px;
   bottom: 100px;
   right: 10px;
-  
   border-radius: 50%;
   font-size: 40px;
   background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);

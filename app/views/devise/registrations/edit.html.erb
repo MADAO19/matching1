@@ -1,16 +1,15 @@
-<%= form_with model: @user, url:user_registration_path, class: "form-wrap", local: true do |f| %>
+<%= form_with model: @user, url:  user_registration_path, class: "form-wrap", local: true do |f| %>
 
       <div class="form-header">
-        <h1 class="catch-copy">新規登録</h1>
+        <h1 class="catch-copy">編集</h1>
       </div>
 
 
-<%= render 'shared/error_messages', model: f.object %>
+<%= render 'shared/error_messages', model: f.object %> 
 
 
       <div class="form-group">
         <div class="form-text-wrap">
-          <span class="indispensable">必須</span>
           <label class="form-text">ニックネーム</label>
       </div>
         <%= f.text_area :nickname, class: "input-default" %>
@@ -18,32 +17,15 @@
 
       <div class="form-group">
         <div class="form-text-wrap">
-          <span class="indispensable">必須</span>
           <label class="form-text">メールアドレス</label>
       </div>
         <%= f.email_field :email, class: "input-default" %>
       </div>
 
-      <div class="form-group">
-        <div class="form-text-wrap">
-          <span class="indispensable">必須</span>
-          <label class="form-text">パスワード</label>
-      </div>
-        <%= f.password_field :password, class: "input-default" %>
-         <p class='info-text'>※英字と数字の両方を含めて設定してください</p>
-      </div>
+      
 
       <div class="form-group">
         <div class="form-text-wrap">
-          <span class="indispensable">必須</span>
-          <label class="form-text">パスワード確認</label>
-      </div>
-        <%= f.password_field :password, class: "input-default" %>
-      </div>
-
-      <div class="form-group">
-        <div class="form-text-wrap">
-          <span class="indispensable">必須</span>
           <label class="form-text">性別</label>
         </div>
           <%= f.collection_select(:sex_id, Sex.all, :id, :name, {}, {class:"input-select"}) %>
@@ -51,7 +33,6 @@
 
         <div class="form-group">
           <div class="form-text-wrap">
-            <span class="indispensable">必須</span>
             <label class="form-text">生年月日</label>
           </div>
          <%= raw sprintf(
@@ -68,7 +49,6 @@
 
               <div class="form-group">
               <div class="form-text-wrap">
-              <span class="indispensable">必須</span>
               <label class="form-text">画像</label>
               </div>
                 <%= f.file_field :image, class: "input-default" %>
@@ -115,8 +95,17 @@
               </div>
               <%= f.text_area :resident, class: "input-default" %>
               </div>
+
+              <%# <div class="form-group">
+        <div class="form-text-wrap">
+          <span class="indispensable">必須</span>
+          <label class="form-text">パスワードの入力をしてください</label>
+      </div>
+        <%= f.password_field :current_password, class: "input-default" %>
+         <%# <p class='info-text'>※英字と数字の両方を含めて設定してください</p>
+      </div>  %>
       
-        <%= f.submit "登録", class: "submit-button" %>
+        <%= f.submit "編集", class: "submit-button" %>
         <% end %>
     
   </body>

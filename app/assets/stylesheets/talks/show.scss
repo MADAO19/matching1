@@ -1,4 +1,5 @@
 .talk {
+  
   background-color:rgb(248, 249, 250);
   height: 100vh;
 	
@@ -35,19 +36,21 @@
  top: 143px;
 }
 
- .talk_right {
-	float:right; /* 右のふきだしは全体的に右寄せ */
-  margin-top:1em;
+ .talk_right { /* 右のふきだしは全体的に右寄せ */
+  display: flex;
+  padding-top:100px;
+  margin-left: 15px;
+  margin-bottom: -95px;
   color: rgb(248, 249, 250);
 }
 
- .talk_right p { /* 右ふきだしの本体 */
+  p { /* 右ふきだしの本体 */
 	display:inline-block;
 	position:relative;
 	background-color:#2e99e0;
 	border-radius:10px;
 	padding:10px;
-	margin:50px 10px 0 0;
+	margin:10px 10px 0 0;
 }
 
 .time-right {
@@ -65,7 +68,7 @@
   position: fixed;
 }
 
-.submit-message {
+#submit-message {
  border-radius: 50px;
  width: 100vw;
  height: 50px;
@@ -74,7 +77,7 @@
  outline: none;
 }
 
-.submit-message::placeholder {
+#submit-message::placeholder {
 padding-top: 10px;
 }
 
@@ -82,7 +85,7 @@ padding-top: 10px;
 
 .send {
   position: absolute;
-  left: 96vw;
+  left: 66vw;
   bottom: 12px;
   border: none;
   color: rgb(30, 132, 228);

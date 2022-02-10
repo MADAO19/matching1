@@ -1,0 +1,18 @@
+<%# @messages.each do |message| %>
+     <%if talk_message.user_id==current_user.id%>
+     <div class="talk_right">
+     <%= simple_format(talk_message.message) %>
+      </div>
+     <%else%>
+      <div class="talk_left">
+      <% talk_message.message %>
+      </div>
+      <div class="time-left">
+  
+      </div> 
+
+      <div class="time-right">
+      
+      </div>
+      <%end%>
+      <%#end%>
